@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Valentine 💖</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    text-align: center;
+    color: white;
+}
+
+.container {
+    padding-top: 100px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#yesBtn {
+    background: #ff004c;
+    color: white;
+}
+
+#noBtn {
+    background: white;
+    color: #ff004c;
+}
+
+#finalMessage {
+    display: none;
+    font-size: 35px;
+    margin-top: 30px;
+}
+
+/* Full screen video section */
+#videoSection {
+    display: none;
+    margin-top: 40px;
+}
+
+video {
+    width: 90%;
+    max-width: 900px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 0 25px white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Will you be my Valentine? 💘</h1>
+    <button id="yesBtn">Yes 💖</button>
+    <button id="noBtn">No 😢</button>
+
+    <div id="finalMessage">
+        🎉 I LOVE YOU THANGOOO 💕 <br>
+        ❤️❤️❤️ by vinojaanu ❤️❤️❤️
+    </div>
+</div>
+
+<div id="videoSection">
+    <video id="loveVideo" controls>
+        <source src="love.mp4" type="video/mp4">
+        Your browser does not support video.
+    </video>
+</div>
+
+<script>
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const finalMessage = document.getElementById("finalMessage");
+const videoSection = document.getElementById("videoSection");
+const video = document.getElementById("loveVideo");
+
+yesBtn.onclick = function() {
+
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+    finalMessage.style.display = "block";
+
+    setTimeout(function(){
+        videoSection.style.display = "block";
+
+        // Smooth scroll to video
+        videoSection.scrollIntoView({ behavior: "smooth" });
+
+        video.play();
+    }, 2000);
+};
+
+noBtn.onclick = function() {
+    this.style.position = "absolute";
+    this.style.left = Math.random() * (window.innerWidth - 100) + "px";
+    this.style.top = Math.random() * (window.innerHeight - 50) + "px";
+};
+</script>
+
+</body>
+</html>
